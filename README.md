@@ -9,6 +9,8 @@ It includes:
 - **AI Integration**: Prompts to evaluate Crisis Management, Sustainability, and Motivation.
 - **Dashboard**: React + Vite + Mantine UI for visualizing candidate rankings.
 
+<video src="https://github.com/user-attachments/assets/fedb5f15-71e1-4193-a33b-24c4cf6b9e2b"></video>
+
 ## Setup Instructions
 1. **Database Setup**:
    - Import `database/schema.sql` into your MySQL database.
