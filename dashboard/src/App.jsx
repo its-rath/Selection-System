@@ -1,11 +1,15 @@
-import { AppShell, Burger, Group, Title, Text, Container, Paper, SimpleGrid } from '@mantine/core';
+import { AppShell, Burger, Group, Title, Text, Container, Paper, SimpleGrid, ActionIcon, useMantineColorScheme, useComputedColorScheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconRecycle } from '@tabler/icons-react';
+import { IconRecycle, IconSun, IconMoon } from '@tabler/icons-react';
 import Leaderboard from './components/Leaderboard';
 import candidates from './dummy_data.json';
+import cx from 'clsx';
+import classes from './App.module.css'; // We might need to create this for specific animation, or just use inline styles/mantine props
 
 export default function App() {
   const [opened, { toggle }] = useDisclosure();
+  const { setColorScheme } = useMantineColorScheme();
+  const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
 
   // Quick Stats
   const topScore = Math.max(...candidates.map(c => c.average_score));
@@ -17,9 +21,19 @@ export default function App() {
       padding="md"
     >
       <AppShell.Header>
-        <Group h="100%" px="md">
-          <IconRecycle size={30} color="green" />
-          <Title order={3}>G CP Selection System</Title>
+        <Group h="100%" px="md" justify="space-between">
+          <Group>
+            <IconRecycle size={30} color="green" />
+            <Title order={3}>G CP Selection System</Title>
+          </Group>
+          <ActionIcon
+            onClick={() => setColorScheme(computedColorScheme === 'light' ? 'dark' : 'light')}
+            variant="default"
+            size="xl"
+            aria-label="Toggle color scheme"
+          >
+            {computedColorScheme === 'dark' ? <IconSun size={20} stroke={1.5} /> : <IconMoon size={20} stroke={1.5} />}
+          </ActionIcon>
         </Group>
       </AppShell.Header>
 
