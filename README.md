@@ -1,4 +1,6 @@
 # Recycling Production Line Manager Selection System
+<img width="1919" height="940" alt="image" src="https://github.com/user-attachments/assets/49b4c117-48df-4e7c-8fb4-692c516eb31b" />
+
 
 ## Overview
 This is a standalone system for ranking candidates for a Recycling Production Line Manager role.
