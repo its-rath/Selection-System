@@ -1,4 +1,5 @@
-import { Modal, Text, Group, Stack, Badge, Grid } from '@mantine/core';
+import { Modal, Text, Group, Stack, Badge, Grid, Button } from '@mantine/core';
+import { notifications } from '@mantine/notifications';
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
 
 export default function CandidateModal({ candidate, opened, onClose }) {
@@ -40,6 +41,21 @@ export default function CandidateModal({ candidate, opened, onClose }) {
                         <PolarRadiusAxis angle={30} domain={[0, 10]} />
                         <Radar name={candidate.name} dataKey="A" stroke="#228be6" fill="#228be6" fillOpacity={0.6} />
                     </RadarChart>
+                    <Button
+                        fullWidth
+                        mt="md"
+                        variant="gradient"
+                        gradient={{ from: 'orange', to: 'red' }}
+                        onClick={() => {
+                            notifications.show({
+                                title: 'Candidate Shared',
+                                message: `Detailed profile of ${candidate.name} has been sent to HR.`,
+                                color: 'green'
+                            });
+                        }}
+                    >
+                        Share Candidate
+                    </Button>
                 </Grid.Col>
             </Grid>
         </Modal>
