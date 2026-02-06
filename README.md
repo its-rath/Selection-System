@@ -7,13 +7,27 @@ It includes:
 - **AI Integration**: Prompts to evaluate Crisis Management, Sustainability, and Motivation.
 - **Dashboard**: React + Vite + Mantine UI for visualizing candidate rankings.
 
-## Setup
-1. `npm install`
-2. [More instructions coming soon...]
+## Setup Instructions
+1. **Database Setup**:
+   - Import `database/schema.sql` into your MySQL database.
+   - Run `node seed.js` to generate fresh data (already generated in `database/insert_data.sql`).
+2. **Dashboard Setup**:
+   - `cd dashboard`
+   - `npm install`
+   - `npm run dev`
+   - Open `http://localhost:5173`
 
-## Roadmap
-- [ ] Phase 1: Setup
-- [ ] Phase 2: Database Design
-- [ ] Phase 3: AI Prompts
-- [ ] Phase 4: Dashboard
-- [ ] Phase 5: Submission
+## Submission Details
+- **Code**: GitHub Repository (Source code + SQL).
+- **AI Prompts**: See `AI_PROMPTS.md`.
+- **Database**: 
+    - Schema: `database/schema.sql`
+    - Data: `database/insert_data.sql`
+- **Dashboard**: React + Vite + Mantine (Source in `dashboard/`).
+
+## Project Structure
+- `/database`: SQL files and JSON dump.
+- `/dashboard`: Frontend application.
+- `AI_PROMPTS.md`: Evaluation criteria prompts.
+- `seed.js`: Data generator script.
+
